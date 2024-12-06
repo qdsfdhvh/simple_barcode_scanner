@@ -71,25 +71,25 @@ public class FlutterBarcodeScannerPlugin implements MethodCallHandler, ActivityR
     public FlutterBarcodeScannerPlugin() {
     }
 
-    private FlutterBarcodeScannerPlugin(FlutterActivity activity, final PluginRegistry.Registrar registrar) {
-        FlutterBarcodeScannerPlugin.activity = activity;
-    }
+    // private FlutterBarcodeScannerPlugin(FlutterActivity activity, final PluginRegistry.Registrar registrar) {
+    //     FlutterBarcodeScannerPlugin.activity = activity;
+    // }
 
-    /**
-     * Plugin registration.
-     */
-    public static void registerWith(final PluginRegistry.Registrar registrar) {
-        if (registrar.activity() == null) {
-            return;
-        }
-        Activity activity = registrar.activity();
-        Application applicationContext = null;
-        if (registrar.context() != null) {
-            applicationContext = (Application) (registrar.context().getApplicationContext());
-        }
-        FlutterBarcodeScannerPlugin instance = new FlutterBarcodeScannerPlugin((FlutterActivity) registrar.activity(), registrar);
-        instance.createPluginSetup(registrar.messenger(), applicationContext, activity, registrar, null);
-    }
+    // /**
+    //  * Plugin registration.
+    //  */
+    // public static void registerWith(final PluginRegistry.Registrar registrar) {
+    //     if (registrar.activity() == null) {
+    //         return;
+    //     }
+    //     Activity activity = registrar.activity();
+    //     Application applicationContext = null;
+    //     if (registrar.context() != null) {
+    //         applicationContext = (Application) (registrar.context().getApplicationContext());
+    //     }
+    //     FlutterBarcodeScannerPlugin instance = new FlutterBarcodeScannerPlugin((FlutterActivity) registrar.activity(), registrar);
+    //     instance.createPluginSetup(registrar.messenger(), applicationContext, activity, registrar, null);
+    // }
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
@@ -276,7 +276,7 @@ public class FlutterBarcodeScannerPlugin implements MethodCallHandler, ActivityR
             final BinaryMessenger messenger,
             final Application applicationContext,
             final Activity activity,
-            final PluginRegistry.Registrar registrar,
+            // final PluginRegistry.Registrar registrar,
             final ActivityPluginBinding activityBinding) {
 
 
